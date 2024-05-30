@@ -17,7 +17,7 @@ return {
     }
   },
   
-  -- add eplugins below here
-  
+  -- add plugins below here
+
 
 }
