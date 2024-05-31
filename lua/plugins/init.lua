@@ -18,6 +18,5 @@ return {
   },
   
   -- add plugins below here
-
-
+  
 }
