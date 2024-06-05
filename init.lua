@@ -1,3 +1,17 @@
+-- Set cursor styles
+vim.opt.guicursor = {
+  "n:block-Cursor",
+  "i-c:block-CursorInsert",
+  "v:block-CursorVisual",
+  "r:block-CursorReplace"
+}
+vim.cmd [[
+  highlight Cusror guifg=#000000 guibg=#FFFFFF
+  highlight CusrorInsert guifg=#FFFFFF guibg=#317BF6
+  highlight CursorVisual guifg=NONE guibg=#9BC8FA
+  highlight CusrorReplace guifg=NONE guibg=#EDFA93
+]]
+
 -- This file simply bootstraps the installation of Lazy.nvim and then calls other files for execution
 -- This file doesn't necessarily need to be touched, BE CAUTIOUS editing this file and proceed at your own risk.
 local lazypath = vim.env.LAZY or vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
