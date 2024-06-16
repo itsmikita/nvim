@@ -15,21 +15,7 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
-require "functions"
 require "lazy_setup"
 require "polish"
 
--- Set cursor styles
-vim.opt.guicursor = {
-  "n:block-Cursor",
-  "i-c:block-CursorInsert",
-  "v:block-CursorVisual",
-  "r:block-CursorReplace"
-}
-vim.cmd [[
-  highlight Cusror guifg=#000000 guibg=#FFFFFF
-  highlight CusrorInsert guifg=#FFFFFF guibg=#317BF6
-  highlight CursorVisual guifg=NONE guibg=#9BC8FA
-  highlight CusrorReplace guifg=NONE guibg=#EDFA93
-]]
 
