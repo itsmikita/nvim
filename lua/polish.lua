@@ -17,6 +17,41 @@
 --   },
 -- }
 
+-- Clipboard
+-- Use the System Clipboard for all operations
+vim.o.clipboard = "unnamedplus"
+-- Map Ctrl+C to copy to the System Clipboard in VISUAL mode
+vim.api.nvim_set_keymap("v", "<C-c>", '"+y', { noremap = true, silent = true })
+-- Map Ctrl+V to paste from System Clipboard in NORMAL mode
+vim.api.nvim_set_keymap("n", "<C-v>", '"+p', { noremap = true, silent = true })
+-- Map Ctrl+V to paste from System Clipboard in INSERT mode
+vim.api.nvim_set_keymap("i", "<C-v>", '<C-r>+', { noremap = true, silent = true })
+
+
+-- Global config for Tabs
+-- Number of spaces to use in a <Tab>
+vim.o.tabstop = 2
+-- Number of spaces to use for each step of auto indent
+vim.o.shiftwidth = 2
+-- Use spaces instead of tabs
+vim.o.expandtab = true
+-- Make backspace delete spaces instead
+vim.o.softtabstop = 2
+-- Enable smart indenting
+vim.o.smartindent = true
+
+-- To configure Tabs per file type:
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "javascript",
+  callback = function()
+    vim.bo.tabstop = 2
+    vim.bo.shiftwidth = 2
+    vim.bo.expandtab = true
+    vim.bo.softtabstop = 2
+    vim.bo.smartindent = true
+  end
+})
+
 -- Set cursor styles
 vim.opt.guicursor = {
   "n:block-Cursor",
